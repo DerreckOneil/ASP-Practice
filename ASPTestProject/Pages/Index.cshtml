@@ -1,0 +1,92 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<configuration>
+    <system.web>
+        <customErrors mode="Off" />
+        <compilation debug="true" />
+    </system.web>
+</configuration>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+
+</div>
+
+<div id="wrapper">
+    <div id="left">
+        <p>Text should be left</p>
+        <p>The goal of this project is to do the following: </p>
+        <ol>
+            <li>Study ASP.NET</li>
+            <li>Study HTML</li>
+            <ol>
+                <li>Print information</li>
+                <li>Get information via text field</li>
+                <li>Print the text directly below</li>
+            </ol>
+            <li>Study SQL and integrate new data from MS SQL server object explorer</li>
+            <li>Study dependency injection and what makes it work</li>
+        </ol>
+
+
+    </div>
+</div>
+
+
+<body ng-app="myModule">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+
+    <script src="~/js/angular.min.js"></script>
+    <script src="~/js/JavaScript.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="~/css/bgStyle.css" />-->
+    <div ng-controller="myController">
+        <p>Basic math: 10+20 = {{10+20}}</p>
+        <p>Message from angular {{message}} </p>
+        <p>PersonA from angular: {{personA}}</p>
+        <p>PersonB from angular: {{personB}}</p>
+        <p>PersonA name: {{personA.firstName}}</p>
+    </div>
+
+    <label for="txtfield">Text field:</label>
+    <input type="text" id="txtfield" name="txtfield" placeholder="Place some text here!" />
+    <button id="submit">Submit</button>
+    <button id="reset">Reset</button>
+    <p class="space">
+
+    </p>
+
+    <div class="text-start">
+        <label for="firstName">First Name: </label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" />
+        <br />
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter last name" />
+        <br />
+        <button id="submitPersonInfo">Submit</button>
+
+    </div>
+
+    <script src="~/js/site2.js"></script>
+    <script src="~/js/person.js"></script>
+
+    <div class="center-container">
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click', onSubmitClick);
+        document.getElementById('reset').addEventListener('click', onResetClick);
+        document.getElementById('submitPersonInfo').addEventListener('click', onSubmitPersonInfoClick);
+    </script>
+
+
+</body>
+
+
+<div class="text-center">
+    <p>Made by Derreck O.</p>
+</div>

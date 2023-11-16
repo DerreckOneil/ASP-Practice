@@ -1,0 +1,9 @@
+body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_(Windows_XP).png');
+    background-size: cover; /*Cover the entire background*/
+    background-position: center; /*Centers it horizontally and vertically*/
+    background-attachment: fixed; /*Fixes the background in place so it doesn't move as you scroll*/
+    background-repeat: no-repeat; /*prevents the image from repeating*/
+    height: 100vh; /*sets the body height to 100% of the viewport height*/
+    margin: 0; /*Removes any default margins on the body element*/
+}
