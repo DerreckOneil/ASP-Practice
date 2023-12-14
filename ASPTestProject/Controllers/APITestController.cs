@@ -1,5 +1,4 @@
-﻿
-namespace ASPTestProject.Controllers
+﻿namespace ASPTestProject.Controllers
 {
     using System.IO;
     using System.Net;
@@ -38,9 +37,6 @@ namespace ASPTestProject.Controllers
             Console.WriteLine("filePath: " + filePath);
             try
             {
-
-                //string firstName = data["firstName"].ToString();
-                //string lastName = data["lastName"].ToString();
 
                 dynamic response = new
                 {
@@ -82,14 +78,14 @@ namespace ASPTestProject.Controllers
                         {
                             string oldJsonData = System.IO.File.ReadAllText(filePath);
 
-                            List<Person> priorPeople = JsonConvert.DeserializeObject<List<Person>>(oldJsonData);
+                            List<Person> priorPeople = JsonConvert.DeserializeObject<List<Person> >(oldJsonData);
 
                             people.AddRange(priorPeople);
                             Console.WriteLine("Added in the old information");
                         }
                         string jsonData = JsonConvert.SerializeObject(people, Formatting.Indented);
                         System.IO.File.WriteAllText(filePath, jsonData);
-                        mongoDBCollection.InsertMany(people);
+                        mongoDBCollection.InsertOne(person); //This way, we're not placing in dupes for old data. 
                         Console.WriteLine("SAVED FILE!");
                     });
                 await BeginSaving;
